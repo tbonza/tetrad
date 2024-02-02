@@ -1,4 +1,5 @@
 (executable
  (public_name tetrad)
- (name main)
- (libraries tetrad))
+ (name tetrad)
+ (libraries tetrad core core_unix.command_unix)
+ (preprocess (pps ppx_jane)))
