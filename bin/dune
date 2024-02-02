@@ -1,0 +1,4 @@
+(executable
+ (public_name tetrad)
+ (name main)
+ (libraries tetrad))
