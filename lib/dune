@@ -1,2 +1,19 @@
+(rule
+  (targets wikidata_j.ml wikidata_j.mli)
+  (deps wikidata.atd)
+  (mode fallback)
+  (action (run atdgen -j %{deps})))
+
+(rule
+  (targets wikidata_t.ml wikidata_t.mli)
+  (deps wikidata.atd)
+  (mode fallback)
+  (action (run atdgen -t %{deps})))
+
 (library
- (name tetrad))
+ (name tetrad)
+ (libraries core yojson atdgen)
+ (flags     :standard -w -32)
+ (modules
+   wikidata_j
+   wikidata_t))
